@@ -7,10 +7,14 @@
 
 # credits: novaspirit tech on YouTube, kryptokrona docs
 
-# variables (CHANGE THESE)
-MINERPOOL_URL="stratum+tcp://xmg.minerclaim.net:7008"
-WORKER_USERNAME="Worker1User"
-WORKER_PASSWORD="Worker1Password"
+echo "magi-aarch64.sh"
+
+# get user input
+echo "You need a mining pool for mining to work."
+echo "See the README of my repo for more info."
+read -rp "REQUIRED: enter a miner pool URL. (Example: stratum+tcp://xmg.minerclaim.net:7008) " MINERPOOL_URL
+read -rp "REQUIRED: enter a miner pool username. (Example: ryanfortner.Worker1) " WORKER_USERNAME
+read -rp "REQUIRED: enter a miner pool password. " WORKER_PASSWORD
 
 function setup {
     echo "installing dependencies..."
