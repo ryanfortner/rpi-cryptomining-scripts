@@ -1,1 +1,1 @@
-# rpi-mining-scripts
+# rpi-cryptomining-scripts
