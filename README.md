@@ -6,6 +6,7 @@ Many more crypto currencies coming soon!
 ### XMG (Coin Magi)
 #### 64-bit
 48-hour profit: $0.05 USD
+
 Hashrate: --
 - You will need to have a mining pool as well as a pool username and password. The script will ask you for those three values upon running.
 - I suggest using [xmg.minerclaim.net](https://xmg.minerclaim.net/), since it's super easy to set up.
@@ -17,6 +18,7 @@ wget https://raw.githubusercontent.com/ryanfortner/rpi-cryptomining-scripts/mast
 ### XMR (Monero)
 #### 64-bit
 48-hour profit: $0.01 USD
+
 Hashrate: --
 - You will need a Monero wallet address.
 - The script uses [MoneroOcean](https://moneroocean.stream), an easy-to-use mining pool with no signup required.
