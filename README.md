@@ -22,7 +22,7 @@ wget https://raw.githubusercontent.com/ryanfortner/rpi-cryptomining-scripts/mast
 Hashrate: --
 - You will need a Monero wallet address.
 - The script uses [MoneroOcean](https://moneroocean.stream), an easy-to-use mining pool with no signup required.
-- This script has many optimizations to be able to work well on a Raspberry Pi.
+- This script has many optimizations to be able to work well on a Raspberry Pi, including using the `rx/arq` algorithm.
 ```bash
 wget https://raw.githubusercontent.com/ryanfortner/rpi-cryptomining-scripts/master/monero-aarch64.sh
 chmod +x monero-aarch64.sh
