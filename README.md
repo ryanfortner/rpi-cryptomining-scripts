@@ -15,33 +15,24 @@ wget https://raw.githubusercontent.com/ryanfortner/rpi-cryptomining-scripts/mast
 ```
 
 ### XMR (Monero)
-#### 32/64-bit
+#### 64-bit
 48-hour profit: $0.01 USD
 Hashrate: --
-- You will need a mining pool as well as a username and password for that pool.
-- In this case we'll be using MoneroOcean which requires no signup and you can just use a wallet address.
+- You will need a Monero wallet address.
+- The script uses [MoneroOcean](https://moneroocean.stream), an easy-to-use mining pool with no signup required.
 - This script has many optimizations to be able to work well on a Raspberry Pi.
 ```bash
-sudo apt-get update
-sudo apt-get install git build-essential cmake make libuv1-dev libmicrohttpd-dev gcc g++ automake autoconf pkg-config libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev -y
-git clone https://github.com/MoneroOcean/xmrig.git monero-xmrig
-cd monero-xmrig
-mkdir build && cd build
-# for any computer
-cmake ..
-# for raspberry pi 2
-cmake .. -DCMAKE_C_FLAGS="-mcpu=cortex-a7 -mtune=cortex-a7" -DCMAKE_CXX_FLAGS="-mcpu=cortex-a7 -mtune=cortex-a7"
-# for raspberry pi 2 if the above doesn't work
-cmake .. -DARM_TARGET=7
-# for raspberry pi 3
-cmake .. -DCMAKE_C_FLAGS="-mcpu=cortex-a53 -mtune=cortex-a53" -DCMAKE_CXX_FLAGS="-mcpu=cortex-a53 -mtune=cortex-a53"
-# for raspberry pi 4
-cmake .. -DCMAKE_C_FLAGS="-mcpu=cortex-a72 -mtune=cortex-a72" -DCMAKE_CXX_FLAGS="-mcpu=cortex-a72 -mtune=cortex-a72"
-# for asus tinker board 
-cmake .. -DCMAKE_C_FLAGS="-march=armv7-a" -DCMAKE_CXX_FLAGS="-march=armv7-a"
-
-make -j$(nproc)
-
-# run the miner (replace yourwallethere and workername with the necessary values)
-./xmrig -o gulf.moneroocean.stream:10032 -u YOURWALLETHERE -p WORKERNAME~rx/arq
+wget https://raw.githubusercontent.com/ryanfortner/rpi-cryptomining-scripts/master/monero-aarch64.sh
+chmod +x monero-aarch64.sh
+# raspberry pi 2
+./monero-aarch64.sh --rpi2
+# raspberry pi 3
+./monero-aarch64.sh --rpi3
+# raspberry pi 4
+./monero-aarch64.sh --rpi4
+# tinkerboard 
+./monero-aarch64.sh --tinkerboard
+# others
+./monero-aarch64.sh
+rm monero-aarch64.sh
 ```
